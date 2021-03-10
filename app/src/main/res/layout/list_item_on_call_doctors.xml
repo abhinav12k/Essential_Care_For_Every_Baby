@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_doctorAvatar"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:src="@drawable/ic_doctor_andrea"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/theme_blue_color"/>
+
+    <TextView
+        android:id="@+id/textView_docName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Andrea"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_semibold"/>
+
+    <TextView
+        android:id="@+id/textView_isDoctorOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Online"
+        android:textSize="9dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins"/>
+
+</LinearLayout>
