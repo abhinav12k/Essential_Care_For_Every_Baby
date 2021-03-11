@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_profileNotificationMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/dark_grey"
+        android:text="Baby 1 of Oni registered at the Post natal ward at 11:53 AM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView_notifDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19/05/2019"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_profileNotificationMessage"
+        app:layout_constraintEnd_toStartOf="@id/textView_notifTime"/>
+    <TextView
+        android:id="@+id/textView_notifTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11:53 AM"
+        android:fontFamily="@font/poppins"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_profileNotificationMessage"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

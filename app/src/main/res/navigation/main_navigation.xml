@@ -22,5 +22,10 @@
         android:name="com.example.eceb.ui.listOfBabies.BabiesFragment"
         android:label="BabiesFragment"
         tools:layout="@layout/fragment_babies" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.eceb.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
 
 </navigation>
