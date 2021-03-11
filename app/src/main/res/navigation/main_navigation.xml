@@ -16,5 +16,10 @@
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
 
+    <fragment
+        android:id="@+id/navigation_listOfBabies"
+        android:name="com.example.eceb.ui.listOfBabies.BabiesFragment"
+        android:label="BabiesFragment"
+        tools:layout="@layout/fragment_babies"/>
 
 </navigation>

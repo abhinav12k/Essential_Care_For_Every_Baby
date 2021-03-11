@@ -41,17 +41,17 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/eceb"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="27sp" />
 
             <TextView
                 android:id="@+id/textView_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="start"
                 android:text="ID:*****124"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
 
         <ImageView

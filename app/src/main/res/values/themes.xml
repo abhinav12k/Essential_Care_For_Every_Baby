@@ -42,7 +42,7 @@
     <!-- Button Container Style for Main Fragment-->
     <style name="MainFragmentButtonContainerStyle">
         <item name="cardCornerRadius">16dp</item>
-        <item name="cardElevation">4dp</item>
+        <item name="cardElevation">8dp</item>
     </style>
 
 </resources>
