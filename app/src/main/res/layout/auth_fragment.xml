@@ -11,10 +11,10 @@
         android:id="@+id/auth_appBarContainerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/background_auth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/background_auth">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView_menu"
@@ -24,93 +24,100 @@
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_menu_left"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/appBarContentLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imageView_logo"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:src="@drawable/ic_logo" />
 
             <TextView
                 android:id="@+id/textView_appNameFull"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:text="@string/app_name"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="18sp"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageView_logo" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView_individual"
-        android:layout_marginTop="60dp"
-        style="@style/AuthFragmentButtonContainerStyle"
-        app:layout_constraintStart_toStartOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/textView_privacyPolicy"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/auth_appBarContainerLayout">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="16dp"
-            style="@style/AuthFragmentButtonTextStyle"
-            android:text="@string/auth_fragment_individual"
-            android:textColor="@color/theme_blue_dark_color"
-            android:textStyle="bold" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView_individual"
+            style="@style/AuthFragmentButtonContainerStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1">
 
-    </com.google.android.material.card.MaterialCardView>
+            <TextView
+                style="@style/AuthFragmentButtonTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:text="@string/auth_fragment_individual"
+                android:textColor="@color/theme_blue_dark_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView_facility"
-        android:layout_marginTop="16dp"
-        style="@style/AuthFragmentButtonContainerStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardView_individual">
+        </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/auth_fragment_facility"
-            style="@style/AuthFragmentButtonTextStyle"
-            android:textColor="@color/theme_blue_dark_color"
-            android:layout_gravity="center"
-            android:padding="16dp"
-            android:textStyle="bold"/>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView_facility"
+            style="@style/AuthFragmentButtonContainerStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1">
 
-    </com.google.android.material.card.MaterialCardView>
+            <TextView
+                style="@style/AuthFragmentButtonTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:text="@string/auth_fragment_facility"
+                android:textColor="@color/theme_blue_dark_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView_privacyPolicy"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/poppins"
-        android:padding="16dp"
         android:text="@string/auth_fragment_privacy_policy"
         android:textAlignment="center"
         android:textColor="@color/theme_blue_dark_color"

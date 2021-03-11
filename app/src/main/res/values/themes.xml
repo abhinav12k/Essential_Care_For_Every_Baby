@@ -17,8 +17,9 @@
     <!-- Button Container Style for Auth Fragment-->
     <style name="AuthFragmentButtonContainerStyle">
         <item name="cardCornerRadius">16dp</item>
-        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardElevation">4dp</item>
         <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginTop">24dp</item>
         <item name="android:layout_marginEnd">40dp</item>
         <item name="android:layout_height">80dp</item>
         <item name="android:layout_width">match_parent</item>

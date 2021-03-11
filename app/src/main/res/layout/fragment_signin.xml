@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +8,7 @@
     tools:context=".ui.auth.SigninFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/auth_appBarContainerLayout"
+        android:id="@+id/signin_appBarContainerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,8 +28,8 @@
 
         <LinearLayout
             android:id="@+id/appBarContentLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -41,11 +41,9 @@
                 android:id="@+id/imageView_logo"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:src="@drawable/ic_logo" />
 
             <TextView
                 android:id="@+id/textView_appNameFull"
@@ -55,39 +53,33 @@
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="84sp"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageView_logo" />
-
-            <TextView
-                android:id="@+id/textView_appNameShort"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp"
-                android:text="@string/eceb"
-                android:textSize="85sp"
-                android:fontFamily="@font/poppins_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageView_logo" />
+                android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@id/textView_privacyPolicy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signin_appBarContainerLayout">
     <com.google.android.material.card.MaterialCardView
         style="@style/SigninFragmentEditTextStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="16dp">
 
         <EditText
             android:id="@+id/et_employeeCode"
             android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="Enter Employee Code"
@@ -97,11 +89,13 @@
     <com.google.android.material.card.MaterialCardView
         style="@style/SigninFragmentEditTextStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="16dp">
 
         <EditText
             android:id="@+id/et_employeePassword"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -112,31 +106,35 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView_signinBtn"
         style="@style/SigninFragmentEditTextStyle"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:padding="12dp"
             android:text="Sign In"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             android:textColor="@color/theme_blue_dark_color"/>
     </com.google.android.material.card.MaterialCardView>
 
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
-        android:gravity="bottom"
+        android:id="@+id/textView_privacyPolicy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:fontFamily="@font/poppins"
         android:text="@string/auth_fragment_privacy_policy"
-        android:textAlignment="gravity"
-        android:textColor="@color/theme_blue_dark_color"
-        android:layout_height="0dp" />
+        android:textColor="@color/theme_blue_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
