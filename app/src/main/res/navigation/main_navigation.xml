@@ -10,6 +10,7 @@
         android:name="com.example.eceb.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.eceb.ui.notifications.NotificationsFragment"
@@ -20,6 +21,6 @@
         android:id="@+id/navigation_listOfBabies"
         android:name="com.example.eceb.ui.listOfBabies.BabiesFragment"
         android:label="BabiesFragment"
-        tools:layout="@layout/fragment_babies"/>
+        tools:layout="@layout/fragment_babies" />
 
 </navigation>
