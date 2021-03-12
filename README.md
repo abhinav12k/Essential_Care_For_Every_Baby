@@ -10,11 +10,11 @@ https://xd.adobe.com/view/910aed7c-fcb6-466a-91c4-664342e98e4c-c459/?fullscreen
 )
 
 ## Screenshots
-<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/auth_screen.png" width="250"> 
-<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/login_screen.png" width="250"> 
-<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/main_screen.png" width="250"> 
-<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/list_of_babies_screen.png" width="250"> 
-<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/notification_screen.png" width="250"> 
+<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/auth_screen.png" width="250"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/login_screen.png" width="250"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/main_screen.png" width="250"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/list_of_babies_screen.png" width="250"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/notification_screen.png" width="250"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://gitlab.com/abhinav12k/eceb/-/raw/master/assets/profile_screen.png" width="250">
 
 ## UI Implementation
