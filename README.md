@@ -4,6 +4,9 @@
 ## Goal
 > The Essential Care for Every Baby (ECEB) educational and training program, developed by the American Academy of Pediatrics, provides knowledge, skills, and competencies to nurses and doctors in low/middle-income settings so that they can provide life-saving care to newborns from birth through 24 hours postnatal.
 
+## Download Android APK
+[APK Link](https://gitlab.com/abhinav12k/eceb/-/raw/master/app/release/app-release.apk?inline=false)
+
 ## Figma Prototype Link 
 [Adobe XD](
 https://xd.adobe.com/view/910aed7c-fcb6-466a-91c4-664342e98e4c-c459/?fullscreen
