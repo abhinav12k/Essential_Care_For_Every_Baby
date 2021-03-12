@@ -10,18 +10,12 @@ https://xd.adobe.com/view/910aed7c-fcb6-466a-91c4-664342e98e4c-c459/?fullscreen
 )
 
 ## Screenshots
-<img src="
-https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/auth_screen.png" width="250"> 
-<img src="
-https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/login_screen.png" width="250"> 
-<img src="
-https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/main_screen.png" width="250"> 
-<img src="
-https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/list_of_babies_screen.png" width="250"> 
-<img src="
-https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/notification_screen.png" width="250"> 
-<img src="
-https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/profile_screen.png" width="250">
+<img src="https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/auth_screen.png" width="250"> 
+<img src="https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/login_screen.png" width="250"> 
+<img src="https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/main_screen.png" width="250"> 
+<img src="https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/list_of_babies_screen.png" width="250"> 
+<img src="https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/notification_screen.png" width="250"> 
+<img src="https://gitlab.com/abhinav12k/eceb/-/blob/master/assets/profile_screen.png" width="250">
 
 ## UI Implementation
 - I have used constraint layout so that the view are perfect for every screen size.
