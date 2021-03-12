@@ -111,13 +111,16 @@
                         android:textSize="14sp" />
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:layout_marginTop="8dp"
                             android:layout_marginStart="24dp"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/poppins"
@@ -126,7 +129,9 @@
 
                         <androidx.appcompat.widget.SwitchCompat
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
                             android:thumb="@drawable/ic_switch_thumb" />
 
                     </LinearLayout>
@@ -234,19 +239,20 @@
                 <LinearLayout
                     android:id="@+id/linearLayout_cardViewContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/constraintLayout_profileNotifHeader">
+                    app:layout_constraintTop_toBottomOf="@id/constraintLayout_profileNotifHeader"
+                    app:layout_constraintBottom_toTopOf="@id/recyclerView_profileNotifications">
 
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardView_admitted"
                         style="@style/MainFragmentButtonContainerStyle"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="16dp"
@@ -291,7 +297,7 @@
                         android:id="@+id/cardView_discharged"
                         style="@style/MainFragmentButtonContainerStyle"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="16dp"
@@ -336,7 +342,7 @@
                         android:id="@+id/cardView_highRisk"
                         style="@style/MainFragmentButtonContainerStyle"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"

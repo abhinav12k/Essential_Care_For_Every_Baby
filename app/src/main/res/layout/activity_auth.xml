@@ -14,8 +14,21 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textView_privacyPolicy"
         app:defaultNavHost="true"
         app:navGraph="@navigation/auth_navigation" />
+
+
+    <TextView
+        android:id="@+id/textView_privacyPolicy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/auth_fragment_privacy_policy"
+        android:textAlignment="center"
+        android:textColor="@color/theme_blue_dark_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
