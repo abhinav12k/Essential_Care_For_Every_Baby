@@ -12,15 +12,15 @@ before_script:
 
   # Setup path as android_home for moving/exporting the downloaded sdk into it
   - export ANDROID_HOME="${PWD}/android-home"
-  # Create a new directory at specified location
   - install -d $ANDROID_HOME
   - wget --output-document=$ANDROID_HOME/cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip
   # move to the archive at ANDROID_HOME
   - pushd $ANDROID_HOME
   - unzip -d cmdline-tools cmdline-tools.zip
   - popd
-  - export PATH=$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin/
+  - export PATH=$PATH:${ANDROID_HOME}/cmdline-tools/cmdline-tools/bin/
 
+  # Nothing fancy here, just checking sdkManager version
   - sdkmanager --version
 
   # use yes to accept all licenses
@@ -32,6 +32,7 @@ before_script:
   # Not necessary, but just for surity
   - chmod +x ./gradlew
 
+# Basic android and gradle stuff
 # Check linting
 lintDebug:
   interruptible: true
