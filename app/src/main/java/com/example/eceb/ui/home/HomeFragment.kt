@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eceb.R
 import com.example.eceb.databinding.FragmentHomeBinding
+import com.example.eceb.dummyData.DummyData
 import com.example.eceb.models.Doctor
 
 class HomeFragment : Fragment() {
@@ -18,13 +19,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val demoList: Array<Doctor> = arrayOf(
-        Doctor(R.drawable.ic_doctor_andrea, "Andrea", true),
-        Doctor(R.drawable.ic_doctor_kim, "Kim", true),
-        Doctor(R.drawable.ic_doctor_jane, "Jane", true),
-        Doctor(R.drawable.ic_doctor_andrea, "Lara", true),
-        Doctor(R.drawable.ic_doctor_kim, "Jennie", true),
-    )
+    private val demoList = DummyData.dummyDocList
 
     override fun onCreateView(
         inflater: LayoutInflater,

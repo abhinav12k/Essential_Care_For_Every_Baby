@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eceb.R
 import com.example.eceb.constants.Constants
 import com.example.eceb.databinding.FragmentNotificationsBinding
+import com.example.eceb.dummyData.DummyData
 import com.example.eceb.models.Baby
 import com.google.android.material.tabs.TabLayout
 
@@ -18,23 +19,7 @@ class NotificationsFragment : Fragment() {
     private var _binding: FragmentNotificationsBinding? = null
     private val binding get() = _binding!!
 
-    private val demoList: Array<Baby> = arrayOf(
-        Baby(22,"Riya","Female","Prenatal Ward",R.drawable.ic_female, Constants.DANGER_CONDITION),
-        Baby(22,"Nia","Male","Prenatal Ward",R.drawable.ic_male, Constants.PROBLEM_CONDITION),
-        Baby(22,"Adisa","Female","Prenatal Ward",R.drawable.ic_female, Constants.NORMAL_CONDITION),
-        Baby(22,"Deka","Female","Prenatal Ward",R.drawable.ic_female, Constants.PROBLEM_CONDITION),
-        Baby(22,"Fiona","Male","Prenatal Ward",R.drawable.ic_male, Constants.NORMAL_CONDITION),
-        Baby(22,"Riya","Female","Prenatal Ward",R.drawable.ic_female, Constants.DANGER_CONDITION),
-        Baby(22,"Nia","Male","Prenatal Ward",R.drawable.ic_male, Constants.PROBLEM_CONDITION),
-        Baby(22,"Adisa","Female","Prenatal Ward",R.drawable.ic_female, Constants.NORMAL_CONDITION),
-        Baby(22,"Deka","Female","Prenatal Ward",R.drawable.ic_female, Constants.PROBLEM_CONDITION),
-        Baby(22,"Fiona","Male","Prenatal Ward",R.drawable.ic_male, Constants.NORMAL_CONDITION),
-        Baby(22,"Riya","Female","Prenatal Ward",R.drawable.ic_female, Constants.DANGER_CONDITION),
-        Baby(22,"Nia","Male","Prenatal Ward",R.drawable.ic_male, Constants.PROBLEM_CONDITION),
-        Baby(22,"Adisa","Female","Prenatal Ward",R.drawable.ic_female, Constants.NORMAL_CONDITION),
-        Baby(22,"Deka","Female","Prenatal Ward",R.drawable.ic_female, Constants.PROBLEM_CONDITION),
-        Baby(22,"Fiona","Male","Prenatal Ward",R.drawable.ic_male, Constants.NORMAL_CONDITION),
-    )
+    private val demoList = DummyData.dummyNotifList
 
     override fun onCreateView(
         inflater: LayoutInflater,
