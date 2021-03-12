@@ -15,7 +15,8 @@
         android:background="@drawable/background_auth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textView_today">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout_notificatons"
@@ -46,17 +47,17 @@
 
     <TextView
         android:id="@+id/textView_today"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16sp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Today"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frameLayout_tabLayoutContainer" />
+        app:layout_constraintTop_toBottomOf="@id/frameLayout_tabLayoutContainer"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView_notifications"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_notifications"

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eceb.R
 import com.example.eceb.databinding.FragmentHomeBinding
@@ -33,6 +34,25 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
         _binding = FragmentHomeBinding.inflate(inflater, container, false);
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val navController = findNavController()
+        val action = HomeFragmentDirections.actionNavigationHomeToNavigationListOfBabies()
+        binding.cardViewAdmitted.setOnClickListener {
+            navController.navigate(action)
+        }
+
+        binding.cardViewDischarged.setOnClickListener {
+            navController.navigate(action)
+        }
+
+        binding.cardViewHighRisk.setOnClickListener {
+            navController.navigate(action)
+        }
 
         binding.recyclerViewOnCallDoctors.apply {
 
@@ -46,8 +66,9 @@ class HomeFragment : Fragment() {
 
         }
 
-        return binding.root
+
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

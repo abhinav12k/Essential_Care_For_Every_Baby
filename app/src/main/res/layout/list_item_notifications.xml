@@ -20,7 +20,8 @@
     <LinearLayout
         android:id="@+id/linearLayout_babyDetails"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView_babyStatus"
@@ -32,8 +33,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins"
-            android:textSize="10sp"
-            android:text="Baby of Oni" />
+            android:text="Baby of Oni"
+            android:textSize="10sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -45,8 +46,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins"
                 android:text="Location:"
                 android:textSize="10sp" />
 
@@ -54,8 +55,8 @@
                 android:id="@+id/textView_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
                 android:layout_marginStart="2dp"
+                android:fontFamily="@font/poppins"
                 android:text="Prenatal Ward"
                 android:textSize="10sp" />
         </LinearLayout>
@@ -66,58 +67,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="EAT 11:06 AM"
             android:fontFamily="@font/poppins"
-            android:textSize="10sp"/>
+            android:text="EAT 11:06 AM"
+            android:textSize="10sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:layout_marginEnd="16sp"
-        app:layout_constraintEnd_toStartOf="@id/checkbox_status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="end |center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintEnd_toStartOf="@id/checkbox_status"
+        app:layout_constraintStart_toEndOf="@id/linearLayout_babyDetails"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status changed:"
             android:fontFamily="@font/poppins_semibold"
-            android:textSize="12sp"/>
+            android:text="Status changed:"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView_currentStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Problem to Normal"
             android:fontFamily="@font/poppins_semibold"
-            android:textSize="10sp"/>
+            android:text="Problem to Normal"
+            android:textSize="10sp" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView_checkupStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="Past 90 min Checkup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/poppins_semibold"
+        android:gravity="end |center_vertical"
+        android:text="Past 90 min Checkup"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/checkbox_status"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="16sp"/>
+        app:layout_constraintEnd_toStartOf="@id/checkbox_status"
+        app:layout_constraintStart_toEndOf="@id/linearLayout_babyDetails"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/checkbox_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
