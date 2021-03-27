@@ -1,11 +1,78 @@
 package com.example.eceb.api.models.entities
 
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class OrganisationUnit(
+    @Json(name = "access")
+    val access: Access?,
+    @Json(name = "ancestors")
+    val ancestors: List<Ancestor>?,
+    @Json(name = "attributeValues")
+    val attributeValues: List<Any>?,
+    @Json(name = "children")
+    val children: List<Children>?,
+    @Json(name = "closedDate")
+    val closedDate: String?,
+    @Json(name = "code")
+    val code: String?,
+    @Json(name = "created")
+    val created: String?,
+    @Json(name = "dataSets")
+    val dataSets: List<DataSet>?,
+    @Json(name = "dimensionItem")
+    val dimensionItem: String?,
+    @Json(name = "dimensionItemType")
+    val dimensionItemType: String?,
+    @Json(name = "displayFormName")
+    val displayFormName: String?,
+    @Json(name = "displayName")
+    val displayName: String?,
+    @Json(name = "displayShortName")
+    val displayShortName: String?,
+    @Json(name = "externalAccess")
+    val externalAccess: Boolean?,
+    @Json(name = "favorite")
+    val favorite: Boolean?,
+    @Json(name = "favorites")
+    val favorites: List<Any>?,
+    @Json(name = "geometry")
+    val geometry: Geometry?,
     @Json(name = "id")
-    val id: String
+    val id: String,
+    @Json(name = "lastUpdated")
+    val lastUpdated: String?,
+    @Json(name = "leaf")
+    val leaf: Boolean?,
+    @Json(name = "legendSets")
+    val legendSets: List<Any>?,
+    @Json(name = "level")
+    val level: Int?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "openingDate")
+    val openingDate: String?,
+    @Json(name = "organisationUnitGroups")
+    val organisationUnitGroups: List<OrganisationUnitGroup>?,
+    @Json(name = "parent")
+    val parent: Parent?,
+    @Json(name = "path")
+    val path: String?,
+    @Json(name = "periodOffset")
+    val periodOffset: Int?,
+    @Json(name = "programs")
+    val programs: List<Program>?,
+    @Json(name = "shortName")
+    val shortName: String?,
+    @Json(name = "translations")
+    val translations: List<Translation>?,
+    @Json(name = "user")
+    val user: User?,
+    @Json(name = "userAccesses")
+    val userAccesses: List<Any>?,
+    @Json(name = "userGroupAccesses")
+    val userGroupAccesses: List<Any>?,
+    @Json(name = "users")
+    val users: List<User>?
 )
