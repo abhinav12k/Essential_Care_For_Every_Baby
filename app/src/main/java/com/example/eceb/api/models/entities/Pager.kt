@@ -7,13 +7,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Pager(
     @Json(name = "nextPage")
-    val nextPage: String,
+    val nextPage: String?,
     @Json(name = "page")
-    val page: Int,
+    val page: Int?,
     @Json(name = "pageCount")
-    val pageCount: Int,
+    val pageCount: Int?,
     @Json(name = "pageSize")
-    val pageSize: Int,
+    val pageSize: Int?,
     @Json(name = "total")
-    val total: Int
+    val total: Int?
 )

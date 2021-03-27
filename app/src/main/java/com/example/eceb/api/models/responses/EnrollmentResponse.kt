@@ -9,7 +9,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class EnrollmentResponse(
     @Json(name = "enrollments")
-    val enrollments: List<Enrollment>,
+    val enrollments: List<Enrollment>?,
     @Json(name = "pager")
-    val pager: Pager
+    val pager: Pager?
 )

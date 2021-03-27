@@ -4,6 +4,7 @@ import com.example.eceb.api.DHIS2Client
 import com.example.eceb.api.models.entities.Attribute
 import com.example.eceb.api.models.requests.AddTrackedEntityInstancesRequest
 import com.example.eceb.api.models.requests.AddTrackedEntityRequest
+import com.example.eceb.api.models.requests.TrackedEntityEnrollmentRequest
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
@@ -100,7 +101,7 @@ class ApiUnitTest {
     }
 
     @Test
-    fun test_updateTrackedEntityInstance(){
+    fun test_updateTrackedEntityInstance() {
         runBlocking {
             val response = DHIS2Client.basicAuthApi.updateTrackedEntityInInstance(
                 "nEenWmSyUEp",
@@ -119,7 +120,7 @@ class ApiUnitTest {
     }
 
     @Test
-    fun test_deleteTrackedEntityInstance(){
+    fun test_deleteTrackedEntityInstance() {
         runBlocking {
             val response = DHIS2Client.basicAuthApi.deleteTrackedEntityInstance(
                 "KvbzudNVUVx"
@@ -129,11 +130,65 @@ class ApiUnitTest {
     }
 
     @Test
-    fun test_requiredTrackedEntityAttributes(){
+    fun test_requiredTrackedEntityAttributes() {
         runBlocking {
-            val response = DHIS2Client.basicAuthApi.getRequiredTrackedEntityAttributes("KvbzudNVUVx")
+            val response =
+                DHIS2Client.basicAuthApi.getRequiredTrackedEntityAttributes("KvbzudNVUVx")
             //Checking not found response code
             assertThat(response.code()).isEqualTo(404)
+        }
+    }
+
+    @Test
+    fun test_getEnrolledTrackedEntity() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.getEnrollments("ImspTQPwCqd")
+            assertThat(response.code()).isEqualTo(200)
+            assertThat(response.body()?.enrollments?.get(0)?.orgUnit).isEqualTo("ImspTQPwCqd")
+        }
+    }
+
+    @Test
+    fun test_cancelTrackedEntityEnrollment() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.cancelTrackedEntityEnrollment("IalhfSlbLVD")
+            //No content at response (cancel request)
+            assertThat(response.code()).isEqualTo(204)
+        }
+    }
+
+    @Test
+    fun test_completeTrackedEntityEnrollment() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.completeTrackedEntityEnrollment("IalhfSlbLVD")
+            //No content at response (completion request)
+            assertThat(response.code()).isEqualTo(204)
+        }
+    }
+
+    @Test
+    fun test_deleteTrackedEntityEnrollment() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.deleteTrackedEntityEnrollment("IalhfSlbLVD")
+            //Success code on deletion
+            assertThat(response.code()).isEqualTo(200)
+        }
+    }
+
+    @Test
+    fun test_enrollTrackedEntity() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.enrollTrackedEntity(
+                TrackedEntityEnrollmentRequest(
+                    trackedEntityInstance = "IalhfSlbLVD",
+                    orgUnit = "ImspTQPwCqd",
+                    program = "S8uo8AlvYMz",
+                    enrollmentDate = "2013-09-17",
+                    incidentDate = "2013-09-17"
+                )
+            )
+            //Error code due to server conflict
+            assertThat(response.code()).isEqualTo(409)
         }
     }
 
