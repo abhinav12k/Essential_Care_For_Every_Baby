@@ -1,10 +1,13 @@
 package com.example.eceb.api.service
 
 import com.example.eceb.api.models.entities.DataSetResponse
+import com.example.eceb.api.models.entities.Event
 import com.example.eceb.api.models.requests.AddTrackedEntityInstancesRequest
 import com.example.eceb.api.models.requests.AddTrackedEntityRequest
+import com.example.eceb.api.models.requests.MultipleEventRegistrationRequest
 import com.example.eceb.api.models.requests.TrackedEntityEnrollmentRequest
 import com.example.eceb.api.models.responses.*
+import com.squareup.moshi.Json
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -118,5 +121,34 @@ interface DHIS2Api {
         @Query("program") programID: String? = null,
         //TODO: other filters also available see documentation for that -> device a general method for these filter*
     ): Response<EnrollmentResponse>
+
+    /**EVENTS MANAGEMENT**/
+    @GET("events")
+    suspend fun getEvents(
+        @Query("orgUnit") organisationUnit: String,
+        @Query("program") programID: String? = null,
+        //other filters also available see documentation for that -> device a general method for these filter*
+    ): Response<EventsResponse>
+
+    @POST("events")
+    suspend fun registerSingleEvent(
+        @Body event: Event
+    ): Response<TrackedEntityUpdateResponse>
+
+    @POST("events")
+    suspend fun registerMultipleEvents(
+        @Body events: MultipleEventRegistrationRequest
+    ): Response<TrackedEntityUpdateResponse>
+
+    @PUT("events/{event_id}")
+    suspend fun updateEvent(
+        @Path("id") id: String,
+        @Body event: Event
+    ): Response<TrackedEntityUpdateResponse>
+
+    @PUT("events/{event_id}")
+    suspend fun deleteEvent(
+        @Path("id") id: String
+    ): Response<TrackedEntityUpdateResponse>
 
 }

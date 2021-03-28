@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Geometry(
     @Json(name = "coordinates")
-    val coordinates: List<Int>,
+    val coordinates: List<Any>,
     @Json(name = "type")
     val type: String
 )

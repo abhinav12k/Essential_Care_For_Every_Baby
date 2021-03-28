@@ -7,13 +7,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ImportSummary(
     @Json(name = "conflicts")
-    val conflicts: List<Conflict>,
+    val conflicts: List<Conflict>?,
     @Json(name = "enrollments")
-    val enrollments: Enrollments,
+    val enrollments: Enrollments?,
     @Json(name = "importCount")
-    val importCount: ImportCount,
+    val importCount: ImportCount?,
     @Json(name = "responseType")
-    val responseType: String,
+    val responseType: String?,
     @Json(name = "status")
-    val status: String
+    val status: String?
 )

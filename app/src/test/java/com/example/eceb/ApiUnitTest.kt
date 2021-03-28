@@ -1,9 +1,10 @@
 package com.example.eceb
 
 import com.example.eceb.api.DHIS2Client
-import com.example.eceb.api.models.entities.Attribute
+import com.example.eceb.api.models.entities.*
 import com.example.eceb.api.models.requests.AddTrackedEntityInstancesRequest
 import com.example.eceb.api.models.requests.AddTrackedEntityRequest
+import com.example.eceb.api.models.requests.MultipleEventRegistrationRequest
 import com.example.eceb.api.models.requests.TrackedEntityEnrollmentRequest
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
@@ -192,6 +193,76 @@ class ApiUnitTest {
         }
     }
 
+    @Test
+    fun test_getEvents() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.getEvents("DiszpKrYNg8")
+            assertThat(response.code()).isEqualTo(200)
+        }
+    }
 
+    @Test
+    fun test_registerSingleEvent() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.registerSingleEvent(
+                Event(
+                    program = "eBAyeGv0exc",
+                    orgUnit = "DiszpKrYNg8",
+                    eventDate = "2013-05-17",
+                    status = "COMPLETED",
+                    completedDate = "2013-05-18",
+                    storedBy = "admin",
+                    coordinate = Coordinate(
+                        59.8,
+                        10.9
+                    ),
+                    dataValues = listOf(
+                        DataValue(
+                            dataElement = "qrur9Dvnyt5",
+                            value = "22"
+                        ), DataValue(
+                            dataElement = "oZg33kd9taw",
+                            value = "Male"
+                        )
+                    )
+                )
+            )
+            assertThat(response.body()?.httpStatusCode).isEqualTo(200)
+        }
+    }
+
+    @Test
+    fun test_registerMultipleEvent() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.registerMultipleEvents(
+                MultipleEventRegistrationRequest(
+                    listOf(
+                        Event(
+                            program = "eBAyeGv0exc",
+                            orgUnit = "DiszpKrYNg8",
+                            eventDate = "2013-05-17",
+                            status = "COMPLETED",
+                            completedDate = "2013-05-18",
+                            storedBy = "admin",
+                            coordinate = Coordinate(
+                                59.8,
+                                10.9
+                            ),
+                            dataValues = listOf(
+                                DataValue(
+                                    dataElement = "qrur9Dvnyt5",
+                                    value = "22"
+                                ), DataValue(
+                                    dataElement = "oZg33kd9taw",
+                                    value = "Male"
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+            assertThat(response.body()?.httpStatusCode).isEqualTo(200)
+        }
+    }
 
 }
