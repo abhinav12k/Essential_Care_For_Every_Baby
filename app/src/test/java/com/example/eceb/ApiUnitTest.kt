@@ -18,7 +18,7 @@ class ApiUnitTest {
     fun test_userLogin() {
         runBlocking {
             val response = DHIS2Client.basicAuthApi.loginUser()
-            assertThat(response.body()?.userCredentials?.username).isEqualTo("abhinav")
+            assertThat(response.body()?.userCredentials?.username).isEqualTo("admin")
         }
     }
 
@@ -31,15 +31,25 @@ class ApiUnitTest {
     }
 
     @Test
-    fun test_getDataElements() {
+    fun test_getDataElementsList() {
         runBlocking {
-            val response = DHIS2Client.basicAuthApi.getDataElements(
+            val response = DHIS2Client.basicAuthApi.getDataElementsList(
                 null,
                 null,
                 null,
                 null
             )
             assertThat(response.body()?.dataElements?.size).isAtLeast(1)
+        }
+    }
+
+    @Test
+    fun test_getDataElementByID() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.getDataElementByID(
+                "hdHLjKFmxB4"
+            )
+            assertThat(response.body()?.id).isEqualTo("hdHLjKFmxB4")
         }
     }
 
@@ -65,17 +75,23 @@ class ApiUnitTest {
         runBlocking {
             val response = DHIS2Client.basicAuthApi.addTrackedEntityToInstance(
                 AddTrackedEntityRequest(
-                    listOf(
-                        Attribute("w75KJ2mc4zz", value = "Joe"),
-                        Attribute("zDhUuAYrxNC", value = "Smith")
-                    ),
                     orgUnit = "DiszpKrYNg8",
-                    trackedEntity = "KvbzudNVUVx"
+                    trackedEntityType = "nEenWmSyUEp",
+                    attributes = listOf(
+                        Attribute("w75KJ2mc4zz", value = "Tina"),
+                        Attribute("zDhUuAYrxNC", value = "Jonson")
+                    ),
+                    enrollments = listOf(
+                        TrackedEntityEnrollments(
+                            orgUnit = "DiszpKrYNg8",
+                            program = "ur1Edk5Oe2n",
+                            enrollmentDate = "2021-04-03",
+                            incidentDate = "2021-04-03"
+                        )
+                    )
                 )
             )
-            //Likely to produce errorBody due to conflict
-            assertThat(response.code()).isEqualTo(409)
-
+            assertThat(response.code()).isEqualTo(200)
         }
     }
 
@@ -91,13 +107,12 @@ class ApiUnitTest {
                                 Attribute("zDhUuAYrxNC", value = "Smith")
                             ),
                             orgUnit = "DiszpKrYNg8",
-                            trackedEntity = "KvbzudNVUVx"
+                            trackedEntityType = "KvbzudNVUVx"
                         )
                     )
                 )
             )
-            //Likely to produce errorBody due to conflict
-            assertThat(response.code()).isEqualTo(409)
+            assertThat(response.code()).isEqualTo(200)
         }
     }
 
@@ -112,11 +127,10 @@ class ApiUnitTest {
                         Attribute("zDhUuAYrxNC", value = "Smith")
                     ),
                     orgUnit = "DiszpKrYNg8",
-                    trackedEntity = "AHgGHO6ZH9b"
+                    trackedEntityType = "AHgGHO6ZH9b"
                 )
             )
-            //Likely to produce errorBody due to conflict
-            assertThat(response.code()).isEqualTo(409)
+            assertThat(response.code()).isEqualTo(200)
         }
     }
 
@@ -126,7 +140,7 @@ class ApiUnitTest {
             val response = DHIS2Client.basicAuthApi.deleteTrackedEntityInstance(
                 "KvbzudNVUVx"
             )
-            assertThat(response.body()?.httpStatusCode).isEqualTo(200)
+            assertThat(response.code()).isEqualTo(200)
         }
     }
 
@@ -171,7 +185,6 @@ class ApiUnitTest {
     fun test_deleteTrackedEntityEnrollment() {
         runBlocking {
             val response = DHIS2Client.basicAuthApi.deleteTrackedEntityEnrollment("IalhfSlbLVD")
-            //Success code on deletion
             assertThat(response.code()).isEqualTo(200)
         }
     }
@@ -188,16 +201,23 @@ class ApiUnitTest {
                     incidentDate = "2013-09-17"
                 )
             )
-            //Error code due to server conflict
-            assertThat(response.code()).isEqualTo(409)
+            assertThat(response.code()).isEqualTo(200)
         }
     }
 
     @Test
     fun test_getEvents() {
         runBlocking {
-            val response = DHIS2Client.basicAuthApi.getEvents("DiszpKrYNg8")
+            val response = DHIS2Client.basicAuthApi.getEventsList("DiszpKrYNg8")
             assertThat(response.code()).isEqualTo(200)
+        }
+    }
+
+    @Test
+    fun test_getEventDetails() {
+        runBlocking {
+            val response = DHIS2Client.basicAuthApi.getEventDetails("CAla0UUW3L4")
+            assertThat(response.body()?.event).isEqualTo("CAla0UUW3L4")
         }
     }
 

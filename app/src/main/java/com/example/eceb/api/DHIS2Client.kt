@@ -19,7 +19,7 @@ object DHIS2Client {
         .baseUrl(BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())
 
-    private val logging = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
+    private val logging = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
 
     private val okHttpBuilder = OkHttpClient.Builder()
 //        .readTimeout(5,TimeUnit.SECONDS)

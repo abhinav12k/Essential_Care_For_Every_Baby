@@ -14,8 +14,8 @@ data class AddTrackedEntityRequest(
     val geometry: String? = null,
     @Json(name = "orgUnit")
     val orgUnit: String,
-    @Json(name = "trackedEntity")
-    val trackedEntity: String,
+    @Json(name = "trackedEntityType")
+    val trackedEntityType: String,
     @Json(name = "enrollments")
-    val enrollments: TrackedEntityEnrollments? = null,
+    val enrollments: List<TrackedEntityEnrollments>? = null,  //enrollments must be specified for enrolling babies to the program
 )

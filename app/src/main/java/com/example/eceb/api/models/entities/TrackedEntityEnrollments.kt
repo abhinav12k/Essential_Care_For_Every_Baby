@@ -11,9 +11,9 @@ data class TrackedEntityEnrollments(
     @Json(name = "incidentDate")
     val incidentDate: String,
     @Json(name = "orgUnit")
-    val orgUnit: String,
+    val orgUnit: String?,
     @Json(name = "program")
-    val program: String,
+    val program: String?,
     @Json(name = "events")
     val events: List<TrackedEntityEventsEnrollment>? = null
 )
